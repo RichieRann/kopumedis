@@ -13,11 +13,14 @@ return new class extends Migration
     {
         Schema::create('master_obat', function (Blueprint $table) {
             $table->id();
-            $table->string('nomor_registrasi')->unique();
-            $table->string('nama_produk');
-            $table->string('pendaftar');
+            $table->string('kode_bpom')->unique();
+            $table->string('kode_obat')->unique();
+            $table->string('nama_obat');
             $table->string("tanggal_terbit");
-            $table->string("kemasan");
+            $table->string("jenis_kemasan");
+            $table->string("golongan_obat");
+            $table->string("kategori_obat");
+            $table->string("pabrik");
             $table->string("alamat");
             $table->timestamps();
         });

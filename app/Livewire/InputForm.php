@@ -7,31 +7,40 @@ use App\Models\masterObat;
 
 class InputForm extends Component
 {
-    public $nomor_registrasi;
-    public $nama_produk;
-    public $pendaftar;
+    public $kode_bpom;
+    public $kode_obat;
+    public $nama_obat;
     public $tanggal_terbit;
-    public $kemasan;
+    public $jenis_kemasan;
+    public $golongan_obat;
+    public $kategori_obat;
+    public $pabrik;
     public $alamat;
 
     public function add_obat()
     {
         $this->validate([
-            'nomor_registrasi' => 'required|unique:master_obat,nomor_registrasi',
-            'nama_produk' => 'required',
-            'pendaftar' => 'required',
-            'tanggal_terbit' => 'required|date',
-            'kemasan' => 'required',
+            'kode_bpom' => 'required|unique:master_obat,kode_bpom',
+            'kode_obat' => 'required|unique:master_obat,kode_obat',
+            'nama_obat' => 'required',
+            'tanggal_terbit' => 'required',
+            'jenis_kemasan' => 'required',
+            'golongan_obat' => 'required',
+            'kategori_obat' => 'required',
+            'pabrik' => 'required',
             'alamat' => 'required',
         ]);
 
         try {
             masterObat::create([
-                'nomor_registrasi' => $this->nomor_registrasi,
-                'nama_produk' => $this->nama_produk,
-                'pendaftar' => $this->pendaftar,
+                'kode_bpom' => $this->kode_bpom,
+                'kode_obat' => $this->kode_obat,
+                'nama_obat' => $this->nama_obat,
                 'tanggal_terbit' => $this->tanggal_terbit,
-                'kemasan' => $this->kemasan,
+                'jenis_kemasan' => $this->jenis_kemasan,
+                'golongan_obat' => $this->golongan_obat,
+                'kategori_obat' => $this->kategori_obat,
+                'pabrik' => $this->pabrik,
                 'alamat' => $this->alamat,
             ]);
         } catch (\Exception $e) {
@@ -42,7 +51,7 @@ class InputForm extends Component
         session()->flash('message', 'Data obat berhasil disimpan.');
 
         // Reset form fields
-        $this->reset(['nomor_registrasi', 'nama_produk', 'pendaftar', 'tanggal_terbit', 'kemasan', 'alamat']);
+        $this->reset(['kode_bpom', 'kode_obat', 'nama_obat', 'tanggal_terbit', 'jenis_kemasan', 'golongan_obat', 'kategori_obat', 'pabrik', 'alamat']);
     }
 
     public function render()

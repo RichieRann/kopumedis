@@ -11,7 +11,9 @@
 <body>
     <nav>
         <a href="/">Home</a>
-        <a href="/master-obat-bpom" wire:navigate>Master Obat BPOM</a>
+        <a href="/master-obat-bpom" wire:navigate>
+            Master Obat BPOM
+        </a>
     </nav>
     <!-- Navigation Bar -->
     {{ $slot }}

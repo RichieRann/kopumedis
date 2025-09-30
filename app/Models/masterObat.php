@@ -11,11 +11,14 @@ class masterObat extends Model
 
     protected $table = 'master_obat';
     protected $fillable = [
-        'nomor_registrasi',
-        'nama_produk',
-        'pendaftar',
+        'kode_bpom',
+        'kode_obat',
+        'nama_obat',
         'tanggal_terbit',
-        'kemasan',
+        'jenis_kemasan',
+        'golongan_obat',
+        'kategori_obat',
+        'pabrik',
         'alamat',
     ];
 }
