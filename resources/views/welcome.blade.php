@@ -11,7 +11,7 @@
 
 <body>
     <main class="container mx-auto mt-5">
-        <p class="font-bold text-2xl text-amber-700">Hello World!</p>
+        <p class="font-bold text-2xl text-amber-700">This FE LOGIN</p>
     </main>
 </body>
 
