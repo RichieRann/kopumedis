@@ -1,6 +1,6 @@
 <?php
 
-use App\Livewire\InputForm;
+use App\Livewire\MO\AddForm;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -9,4 +9,4 @@ Route::get('/', function () {
 
 
 
-Route::get("/master-obat-bpom", inputForm::class);
+Route::get("/master-obat-bpom", AddForm::class);

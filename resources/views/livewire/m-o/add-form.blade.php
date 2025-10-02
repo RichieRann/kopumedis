@@ -1,5 +1,5 @@
 <div>
-    <form wire:submit='add_obat'>
+    <form wire:submit='addObat'>
         <input type="text" wire:model='kode_bpom' placeholder="Kode BPOM" required />
         <br>
         <input type="text" wire:model='kode_obat' placeholder="Kode Obat" required />
